@@ -445,6 +445,10 @@ home: Scaffold(
 
 Save (hot reload). Sekarang ada bar biru di atas dengan judul "Hello Flutter".
 
+<p align="center">
+  <img src="images/4-2-appbar.png" alt="Hasil Langkah 4.2 — Tambah AppBar" width="280">
+</p>
+
 ### 4.3 Styling Teks
 
 Ubah `Text('Halo, Flutter!')` menjadi:
@@ -461,6 +465,10 @@ const Text(
 ```
 
 Hot reload. Teks sekarang besar, tebal, dan biru.
+
+<p align="center">
+  <img src="images/4-3-styling-teks.png" alt="Hasil Langkah 4.3 — Styling Teks" width="280">
+</p>
 
 ### 4.4 Layout Vertikal dengan Column
 
@@ -519,6 +527,10 @@ Container(
 ```
 
 > **Ganti NIM, Prodi, dan Semester** sesuai data Anda.
+
+<p align="center">
+  <img src="images/4-5-kartu-profil.png" alt="Hasil Langkah 4.5 — Kartu Profil dengan Container" width="280">
+</p>
 
 ### 4.6 Tambah Tombol
 
