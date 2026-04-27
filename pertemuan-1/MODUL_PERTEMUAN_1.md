@@ -2,13 +2,13 @@
 
 ## Informasi Umum
 
-| Item | Keterangan |
-|------|------------|
-| Pertemuan | Minggu 1 (Setup Awal) |
-| Topik Kuliah | Pengenalan Flutter, Instalasi Android Studio Panda, Hot Reload |
-| Durasi Praktikum | 100 menit |
-| Prasyarat | Dart Fundamental |
-| Tools | Android Studio Panda + Flutter SDK 3.38.5 |
+| Item             | Keterangan                                                     |
+| ---------------- | -------------------------------------------------------------- |
+| Pertemuan        | Minggu 1 (Setup Awal)                                          |
+| Topik Kuliah     | Pengenalan Flutter, Instalasi Android Studio Panda, Hot Reload |
+| Durasi Praktikum | 100 menit                                                      |
+| Prasyarat        | Dart Fundamental                                               |
+| Tools            | Android Studio Panda + Flutter SDK 3.38.5                      |
 
 ---
 
@@ -16,12 +16,12 @@
 
 Flutter adalah framework UI dari Google untuk membangun aplikasi **multi-platform dari satu basis kode**: Android, iOS, Web, Windows, macOS, dan Linux. Dibanding alternatifnya, Flutter punya tiga keunggulan praktis yang langsung terasa di praktikum ini:
 
-| Keunggulan | Penjelasan Singkat |
-|------------|--------------------|
-| **Hot Reload** | Perubahan kode tampil di aplikasi dalam < 1 detik tanpa kehilangan state. Tidak ada lagi "build 2 menit hanya untuk geser tombol 4 piksel". |
-| **Single Codebase** | Satu kode Dart → jadi APK Android **dan** IPA iOS. Logika bisnis & UI dipakai bersama. |
-| **Widget-based** | Semua di Flutter adalah widget. Konsisten, mudah dipelajari, mudah dikomposisikan. |
-| **Performa Native** | Flutter compile ke kode native (ARM/x64), bukan WebView. Animasi 60–120 fps tanpa lag. |
+| Keunggulan          | Penjelasan Singkat                                                                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hot Reload**      | Perubahan kode tampil di aplikasi dalam < 1 detik tanpa kehilangan state. Tidak ada lagi "build 2 menit hanya untuk geser tombol 4 piksel". |
+| **Single Codebase** | Satu kode Dart → jadi APK Android **dan** IPA iOS. Logika bisnis & UI dipakai bersama.                                                      |
+| **Widget-based**    | Semua di Flutter adalah widget. Konsisten, mudah dipelajari, mudah dikomposisikan.                                                          |
+| **Performa Native** | Flutter compile ke kode native (ARM/x64), bukan WebView. Animasi 60–120 fps tanpa lag.                                                      |
 
 > **Bahasa**: Flutter pakai **Dart**. Sintaksnya mirip Java/JavaScript/TypeScript — kalau sudah pernah ngoding salah satunya, kurva belajarnya landai.
 
@@ -82,15 +82,15 @@ Bila sudah punya Android Studio versi sebelumnya (Otter atau lebih lama), upgrad
 2. Buka file `.dmg`, lalu drag icon **Android Studio** ke folder **Applications**.
 3. Akan muncul dialog konfirmasi:
 
-   > *"An older item named 'Android Studio' already exists in this location. Do you want to replace it with the newer one you're copying?"*
+   > _"An older item named 'Android Studio' already exists in this location. Do you want to replace it with the newer one you're copying?"_
 
 4. Pilih **Replace** ✅
 
-| Opsi | Efek |
-|------|------|
+| Opsi           | Efek                                                                                                                                                                        |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Replace** ✅ | Versi lama ditimpa. Settings, plugin (Flutter & Dart), SDK, AVD tetap aman karena tersimpan di `~/Library/Application Support/Google/AndroidStudio*`. **Direkomendasikan.** |
-| Keep Both | Dua versi coexist, boros disk ~3-4 GB. Hanya untuk testing. |
-| Stop | Batalkan instalasi. |
+| Keep Both      | Dua versi coexist, boros disk ~3-4 GB. Hanya untuk testing.                                                                                                                 |
+| Stop           | Batalkan instalasi.                                                                                                                                                         |
 
 5. Buka Android Studio Panda → akan muncul dialog **Import Studio settings** → pilih versi sebelumnya → semua plugin & config termigrasi.
 
@@ -107,12 +107,14 @@ flutter --version
 ```
 
 Output yang diharapkan:
+
 ```
 Flutter 3.38.5 • channel stable • https://github.com/flutter/flutter.git
 Tools • Dart 3.x.x
 ```
 
 Cek path Flutter SDK (akan dipakai di Langkah 2):
+
 ```bash
 which flutter
 # /opt/homebrew/bin/flutter
@@ -131,12 +133,12 @@ flutter doctor
 
 Pastikan minimal item berikut bertanda ✓ (centang hijau):
 
-| Item | Status yang Dibutuhkan |
-|------|------------------------|
-| Flutter (Channel stable) | ✓ |
-| Android toolchain | ✓ |
-| Android Studio (Panda) | ✓ |
-| Connected device | ✓ (emulator atau HP fisik) |
+| Item                     | Status yang Dibutuhkan     |
+| ------------------------ | -------------------------- |
+| Flutter (Channel stable) | ✓                          |
+| Android toolchain        | ✓                          |
+| Android Studio (Panda)   | ✓                          |
+| Connected device         | ✓ (emulator atau HP fisik) |
 
 > Jika ada item bertanda ✗ atau ! pada Android toolchain, jalankan `flutter doctor --android-licenses` lalu ketik `y` untuk menerima semua lisensi.
 
@@ -150,7 +152,7 @@ Pastikan minimal item berikut bertanda ✓ (centang hijau):
 
 **Opsi B — HP Android Fisik:**
 
-1. Aktifkan **Developer Options** (ketuk *Build Number* 7 kali di Settings → About Phone)
+1. Aktifkan **Developer Options** (ketuk _Build Number_ 7 kali di Settings → About Phone)
 2. Aktifkan **USB Debugging**
 3. Hubungkan HP ke laptop dengan kabel USB
 4. Tap **Allow** ketika dialog "Allow USB debugging" muncul
@@ -162,6 +164,7 @@ flutter devices
 ```
 
 Harus muncul minimal 1 device, contoh:
+
 ```
 sdk gphone64 arm64 (mobile) • emulator-5554 • android-arm64 • Android 14 (API 34)
 ```
@@ -179,23 +182,25 @@ Ada **dua cara** membuat project Flutter. Pilih salah satu sesuai preferensi.
 2. **Pilih template Flutter:** di sidebar kiri, scroll ke bagian **Generators** → klik **Flutter**.
 
 3. **Isi Flutter SDK path:**
+
    ```
    /opt/homebrew/share/flutter
    ```
+
    Atau klik tombol `...` dan navigasi manual ke folder Flutter SDK Anda.
 
 4. Klik **Next**, lalu isi form konfigurasi project:
 
-| Field | Nilai | Catatan Penting |
-|-------|-------|-----------------|
-| **Project name** | `pertemuan_1` | Wajib **snake_case**. Tidak boleh ada spasi, dash, atau huruf besar. |
-| **Project location** | `~/Documents/Projek/Praktikum/pertemuan_1` | Lokasi penyimpanan. |
-| **Description** | `A new Flutter project.` | Bisa diedit nanti di `pubspec.yaml`. |
-| **Project type** | `Application` | Untuk app (bukan plugin/package). |
-| **Organization** | `com.example` atau domain pribadi | Jadi package ID Android & bundle ID iOS. **Sulit diganti** setelah project dibuat. |
-| **Android language** | `Kotlin` ✅ | Standar modern. |
-| **Platforms** | Centang **Android & iOS** saja | Linux/MacOS/Web/Windows uncheck dulu untuk mengurangi folder yang tidak perlu. |
-| **Create project offline** | Unchecked | Perlu internet untuk download dependency. |
+| Field                      | Nilai                                      | Catatan Penting                                                                    |
+| -------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------- |
+| **Project name**           | `pertemuan_1`                              | Wajib **snake_case**. Tidak boleh ada spasi, dash, atau huruf besar.               |
+| **Project location**       | `~/Documents/Projek/Praktikum/pertemuan_1` | Lokasi penyimpanan.                                                                |
+| **Description**            | `A new Flutter project.`                   | Bisa diedit nanti di `pubspec.yaml`.                                               |
+| **Project type**           | `Application`                              | Untuk app (bukan plugin/package).                                                  |
+| **Organization**           | `com.example` atau domain pribadi          | Jadi package ID Android & bundle ID iOS. **Sulit diganti** setelah project dibuat. |
+| **Android language**       | `Kotlin` ✅                                | Standar modern.                                                                    |
+| **Platforms**              | Centang **Android & iOS** saja             | Linux/MacOS/Web/Windows uncheck dulu untuk mengurangi folder yang tidak perlu.     |
+| **Create project offline** | Unchecked                                  | Perlu internet untuk download dependency.                                          |
 
 5. Klik **Create**. Android Studio akan menjalankan `flutter create` + `flutter pub get` (1-2 menit).
 
@@ -216,10 +221,12 @@ Tunggu sampai prosesnya selesai (~30 detik).
 Pastikan emulator sudah menyala.
 
 **Dari Android Studio (GUI):**
+
 1. Di toolbar atas, ganti dropdown device dari `macOS (desktop)` ke emulator Android (misal **Medium Phone**).
 2. Klik tombol ▶️ (Run) hijau atau tekan `Ctrl+R` (Mac) / `Shift+F10` (Windows/Linux).
 
 **Dari terminal:**
+
 ```bash
 flutter run
 ```
@@ -244,11 +251,13 @@ Tunggu proses build (~1–3 menit pada run pertama). Setelah selesai, muncul apl
 Tanpa menutup aplikasi, biarkan run process tetap aktif. Buka file `lib/main.dart`.
 
 Cari baris:
+
 ```dart
 title: 'Flutter Demo Home Page',
 ```
 
 Ubah menjadi:
+
 ```dart
 title: 'Coba Hot Reload!',
 ```
@@ -257,12 +266,12 @@ title: 'Coba Hot Reload!',
 
 ✨ Lihat hasilnya: judul AppBar berubah **dalam waktu < 1 detik tanpa restart**. Itulah Hot Reload.
 
-| Tombol Terminal | Shortcut Android Studio | Fungsi |
-|-----------------|-------------------------|--------|
-| `r` | `Cmd+S` (auto) atau ⚡ | Hot Reload — refresh kode tanpa kehilangan state |
-| `R` | `Cmd+Shift+\` | Hot Restart — restart penuh, state direset |
-| `q` | `Cmd+F2` | Quit — hentikan aplikasi |
-| `h` | — | Help — daftar shortcut |
+| Tombol Terminal | Shortcut Android Studio | Fungsi                                           |
+| --------------- | ----------------------- | ------------------------------------------------ |
+| `r`             | `Cmd+S` (auto) atau ⚡  | Hot Reload — refresh kode tanpa kehilangan state |
+| `R`             | `Cmd+Shift+\`           | Hot Restart — restart penuh, state direset       |
+| `q`             | `Cmd+F2`                | Quit — hentikan aplikasi                         |
+| `h`             | —                       | Help — daftar shortcut                           |
 
 > **Aturan tak tertulis:** selama ngoding Flutter, jangan pernah hentikan run process. Semua perubahan UI cukup save → hot reload.
 
@@ -313,13 +322,13 @@ class MyApp extends StatelessWidget {      // 3. Root widget aplikasi
 
 ### 3.2 Konsep Kunci
 
-| Konsep | Penjelasan |
-|--------|------------|
-| **Widget** | Semua di Flutter adalah widget — teks, tombol, padding, bahkan tema |
-| **`build()` method** | Method yang mengembalikan widget tree — dipanggil setiap kali UI perlu di-render |
-| **`StatelessWidget`** | Widget yang **tidak berubah** setelah dibangun (statis) |
-| **`StatefulWidget`** | Widget yang bisa berubah (dipelajari di praktikum berikutnya) |
-| **`BuildContext`** | "Lokasi" widget di pohon — dipakai untuk akses tema, navigasi, dll |
+| Konsep                | Penjelasan                                                                       |
+| --------------------- | -------------------------------------------------------------------------------- |
+| **Widget**            | Semua di Flutter adalah widget — teks, tombol, padding, bahkan tema              |
+| **`build()` method**  | Method yang mengembalikan widget tree — dipanggil setiap kali UI perlu di-render |
+| **`StatelessWidget`** | Widget yang **tidak berubah** setelah dibangun (statis)                          |
+| **`StatefulWidget`**  | Widget yang bisa berubah (dipelajari di praktikum berikutnya)                    |
+| **`BuildContext`**    | "Lokasi" widget di pohon — dipakai untuk akses tema, navigasi, dll               |
 
 ### 3.2.1 Flow Build → Render (StatelessWidget)
 
@@ -342,11 +351,13 @@ Apa yang sebenarnya terjadi ketika `runApp()` dipanggil? Inilah alurnya:
 ```
 
 **Kenapa StatelessWidget?**
+
 - "Stateless" = **tidak menyimpan data yang berubah**. Begitu dibuat, tampilannya tetap sampai dihapus.
 - Cocok untuk: teks statis, ikon, layout pembungkus, tombol yang tidak punya state internal.
 - Kalau widget perlu **berubah** karena interaksi (counter, toggle, input form) → pakai `StatefulWidget` (praktikum berikutnya).
 
 **Aturan emas:**
+
 > Method `build()` bisa dipanggil **berkali-kali** oleh Flutter (misal saat orientasi layar berubah). Jangan lakukan operasi mahal di dalamnya — cukup susun widget dan return.
 
 ### 3.3 Bedah `pubspec.yaml`
@@ -354,17 +365,17 @@ Apa yang sebenarnya terjadi ketika `runApp()` dipanggil? Inilah alurnya:
 File ini = `package.json` di JavaScript atau `requirements.txt` di Python.
 
 ```yaml
-name: pertemuan_1           # nama project
+name: pertemuan_1 # nama project
 description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.0.0               # versi Dart yang dibutuhkan
+  sdk: ^3.0.0 # versi Dart yang dibutuhkan
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.6   # icon style iOS
+  cupertino_icons: ^1.0.6 # icon style iOS
 
 dev_dependencies:
   flutter_test:
@@ -417,14 +428,14 @@ Tekan **Hot Restart** (`Cmd+Shift+\` atau `R` di terminal) — karena mengubah s
 
 ### Penjelasan Kode
 
-| Baris | Apa yang Terjadi |
-|-------|------------------|
-| `runApp(const MyApp())` | Memberi tahu Flutter: "ini widget root-ku, tampilkan!" |
-| `MaterialApp` | Bungkus aplikasi dengan tema Material Design |
-| `debugShowCheckedModeBanner: false` | Hilangkan label "DEBUG" merah di pojok kanan atas |
-| `Scaffold` | Kerangka halaman (AppBar, body, FAB, BottomNav) |
-| `Center` | Posisikan child-nya tepat di tengah layar |
-| `Text('Halo, Flutter!')` | Tampilkan teks |
+| Baris                               | Apa yang Terjadi                                       |
+| ----------------------------------- | ------------------------------------------------------ |
+| `runApp(const MyApp())`             | Memberi tahu Flutter: "ini widget root-ku, tampilkan!" |
+| `MaterialApp`                       | Bungkus aplikasi dengan tema Material Design           |
+| `debugShowCheckedModeBanner: false` | Hilangkan label "DEBUG" merah di pojok kanan atas      |
+| `Scaffold`                          | Kerangka halaman (AppBar, body, FAB, BottomNav)        |
+| `Center`                            | Posisikan child-nya tepat di tengah layar              |
+| `Text('Halo, Flutter!')`            | Tampilkan teks                                         |
 
 ### 4.2 Tambah AppBar
 
@@ -548,78 +559,6 @@ ElevatedButton(
 
 Hot reload. Selamat — Anda baru saja membangun Hello World versi sendiri! 🎉
 
-### 4.7 Kode Lengkap `lib/main.dart`
-
-```dart
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Hello Flutter'),
-          backgroundColor: Colors.blue,
-          foregroundColor: Colors.white,
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('👋', style: TextStyle(fontSize: 64)),
-              const SizedBox(height: 16),
-              const Text(
-                'Halo, [Nama Anda]!',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Selamat datang di dunia Flutter.',
-                style: TextStyle(fontSize: 14, color: Colors.grey),
-              ),
-              const SizedBox(height: 24),
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 32),
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade50,
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.blue.shade200),
-                ),
-                child: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('NIM: 123456789', style: TextStyle(fontSize: 16)),
-                    SizedBox(height: 4),
-                    Text('Prodi: Teknik Informatika',
-                        style: TextStyle(fontSize: 16)),
-                    SizedBox(height: 4),
-                    Text('Semester: 5', style: TextStyle(fontSize: 16)),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 24),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Tap Saya'),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-```
-
 <p align="center">
   <img src="images/4-7-hello-flutter-final.png" alt="Hasil Akhir Langkah 4 — Hello Flutter" width="280">
 </p>
@@ -701,6 +640,7 @@ void main() {
 ```
 
 🎯 **Eksperimen:**
+
 - Ubah `fontSize` ke 40, lalu ke 12 — apa yang terjadi?
 - Ganti `FontWeight.bold` ke `FontWeight.w300` (tipis), `w900` (sangat tebal)
 - Ganti `Colors.blue` ke `Colors.red`, `Colors.deepPurple`, `Color(0xFF2196F3)`
@@ -745,6 +685,7 @@ void main() {
 ```
 
 🎯 **Eksperimen:**
+
 - Ubah `width` dan `height` ke nilai berbeda (misal 300x100)
 - Ganti `BorderRadius.circular(20)` menjadi `BorderRadius.circular(100)` — bentuk apa yang muncul?
 - Ubah `blurRadius: 20` ke `blurRadius: 50` — perhatikan bayangannya
@@ -800,14 +741,14 @@ class _Kotak extends StatelessWidget {
 
 Ganti `MainAxisAlignment.spaceEvenly` di Row dengan setiap nilai berikut, hot reload tiap kali:
 
-| Nilai | Pengaruh |
-|-------|----------|
-| `.start` | Tumpuk di kiri |
-| `.center` | Tumpuk di tengah |
-| `.end` | Tumpuk di kanan |
+| Nilai           | Pengaruh                                           |
+| --------------- | -------------------------------------------------- |
+| `.start`        | Tumpuk di kiri                                     |
+| `.center`       | Tumpuk di tengah                                   |
+| `.end`          | Tumpuk di kanan                                    |
 | `.spaceBetween` | Pertama di kiri, terakhir di kanan, sisa di tengah |
-| `.spaceAround` | Jarak di tepi = 1/2 jarak antar kotak |
-| `.spaceEvenly` | Semua jarak sama rata |
+| `.spaceAround`  | Jarak di tepi = 1/2 jarak antar kotak              |
+| `.spaceEvenly`  | Semua jarak sama rata                              |
 
 > 💡 **Bonus:** ada saudaranya `crossAxisAlignment` untuk sumbu tegak lurus. Coba tambahkan di Row dan ubah-ubah nilainya.
 
@@ -843,6 +784,7 @@ void main() {
 ```
 
 🎯 **Eksperimen:**
+
 - Buka [https://fonts.google.com/icons](https://fonts.google.com/icons) — pilih 4 ikon yang Anda suka, ganti `Icons.home`, `Icons.receipt_long`, dst dengan nama ikonnya (semua huruf kecil + underscore)
 - Ubah `size: 32` ke ukuran berbeda (24, 48, 64)
 - Ganti warna ikon pertama menjadi merah, kedua hijau, ketiga ungu
@@ -851,31 +793,19 @@ void main() {
 
 ## Ringkasan Widget Dasar
 
-| Widget | Fungsi | Analogi |
-|--------|--------|---------|
-| `MaterialApp` | Bungkus aplikasi (tema, navigasi) | Wrapper aplikasi |
-| `Scaffold` | Kerangka halaman (AppBar, body, FAB) | Template HTML |
-| `AppBar` | Bar judul di atas | Header |
-| `Center` | Posisikan child di tengah | Align center |
-| `Column` | Susun vertikal ↕ | VerticalArrangement (Kodular) |
-| `Row` | Susun horizontal ↔ | HorizontalArrangement (Kodular) |
-| `Container` | Kotak dengan dekorasi | Div + CSS |
-| `Text` | Menampilkan teks | Label |
-| `Icon` | Menampilkan ikon | Image bawaan |
-| `SizedBox` | Jarak/spacer | Margin/padding sederhana |
-| `ElevatedButton` | Tombol terangkat | Button |
-
----
-
-## Tugas Mandiri
-
-Selesaikan **dalam project `pertemuan_1`** (bukan `latihan_widget`). Modifikasi `lib/main.dart` agar:
-
-1. **Ganti emoji 👋** dengan emoji lain yang merepresentasikan Anda (misal 🎓, 🚀, 🐱)
-2. **Tambahkan baris ke-4** di kartu profil: `Hobi: ...`
-3. **Ganti warna AppBar** menjadi warna favorit Anda (boleh pakai `Color(0xFF......)` dari [coolors.co](https://coolors.co))
-4. **Tambahkan kartu profil kedua** di bawah kartu pertama, isinya 3 hal yang ingin Anda pelajari di mata kuliah ini
-5. **Bonus:** ganti `ElevatedButton` menjadi `OutlinedButton`, lalu coba `FilledButton` — apa bedanya?
+| Widget           | Fungsi                               | Analogi                         |
+| ---------------- | ------------------------------------ | ------------------------------- |
+| `MaterialApp`    | Bungkus aplikasi (tema, navigasi)    | Wrapper aplikasi                |
+| `Scaffold`       | Kerangka halaman (AppBar, body, FAB) | Template HTML                   |
+| `AppBar`         | Bar judul di atas                    | Header                          |
+| `Center`         | Posisikan child di tengah            | Align center                    |
+| `Column`         | Susun vertikal ↕                     | VerticalArrangement (Kodular)   |
+| `Row`            | Susun horizontal ↔                   | HorizontalArrangement (Kodular) |
+| `Container`      | Kotak dengan dekorasi                | Div + CSS                       |
+| `Text`           | Menampilkan teks                     | Label                           |
+| `Icon`           | Menampilkan ikon                     | Image bawaan                    |
+| `SizedBox`       | Jarak/spacer                         | Margin/padding sederhana        |
+| `ElevatedButton` | Tombol terangkat                     | Button                          |
 
 ---
 
@@ -894,21 +824,21 @@ Selesaikan **dalam project `pertemuan_1`** (bukan `latihan_widget`). Modifikasi 
 
 ## Troubleshooting Umum
 
-| Masalah | Solusi |
-|---------|--------|
-| Dialog "Replace / Keep Both / Stop" muncul saat install Panda | Pilih **Replace** — settings & plugin tetap aman |
-| `flutter: command not found` | Tambahkan path Flutter SDK ke `PATH` di `.zshrc`/`.bashrc` |
-| Field "Flutter SDK path" kosong di wizard | Isi `/opt/homebrew/share/flutter` (Homebrew) atau path manual install Anda |
-| Plugin Flutter tidak muncul setelah upgrade Studio | **Preferences → Plugins → Marketplace** → install ulang Flutter & Dart |
-| `No connected devices` | Jalankan emulator dulu, atau colok HP & enable USB Debugging |
-| `Gradle build failed` | Jalankan `flutter clean` lalu `flutter run` ulang |
-| `Android Gradle Plugin version ... is lower than Flutter's minimum supported version` | Lihat **Lampiran B — Update Gradle & AGP** |
-| `Flutter support for your project's Gradle version (8.x.x) will soon be dropped` | Naikkan Gradle wrapper, lihat **Lampiran B** |
-| `Unsupported class file major version XX` saat build | JDK terlalu baru/lama. Set JDK 17 di Android Studio: **Preferences → Build → Build Tools → Gradle → Gradle JDK** |
-| Emoji tampil sebagai kotak ☐ | Normal di emulator versi lama — coba di HP fisik |
-| Hot reload tidak bekerja setelah ubah `class` | Pakai Hot Restart (`Cmd+Shift+\` / `R`) bukan Hot Reload |
-| Layar putih saja, tidak ada apa-apa | Cek terminal/Run console — biasanya ada exception merah, baca pesannya |
-| Target device masih `macOS (desktop)` | Klik dropdown device di toolbar atas, ganti ke emulator Android |
+| Masalah                                                                               | Solusi                                                                                                           |
+| ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Dialog "Replace / Keep Both / Stop" muncul saat install Panda                         | Pilih **Replace** — settings & plugin tetap aman                                                                 |
+| `flutter: command not found`                                                          | Tambahkan path Flutter SDK ke `PATH` di `.zshrc`/`.bashrc`                                                       |
+| Field "Flutter SDK path" kosong di wizard                                             | Isi `/opt/homebrew/share/flutter` (Homebrew) atau path manual install Anda                                       |
+| Plugin Flutter tidak muncul setelah upgrade Studio                                    | **Preferences → Plugins → Marketplace** → install ulang Flutter & Dart                                           |
+| `No connected devices`                                                                | Jalankan emulator dulu, atau colok HP & enable USB Debugging                                                     |
+| `Gradle build failed`                                                                 | Jalankan `flutter clean` lalu `flutter run` ulang                                                                |
+| `Android Gradle Plugin version ... is lower than Flutter's minimum supported version` | Lihat **Lampiran B — Update Gradle & AGP**                                                                       |
+| `Flutter support for your project's Gradle version (8.x.x) will soon be dropped`      | Naikkan Gradle wrapper, lihat **Lampiran B**                                                                     |
+| `Unsupported class file major version XX` saat build                                  | JDK terlalu baru/lama. Set JDK 17 di Android Studio: **Preferences → Build → Build Tools → Gradle → Gradle JDK** |
+| Emoji tampil sebagai kotak ☐                                                          | Normal di emulator versi lama — coba di HP fisik                                                                 |
+| Hot reload tidak bekerja setelah ubah `class`                                         | Pakai Hot Restart (`Cmd+Shift+\` / `R`) bukan Hot Reload                                                         |
+| Layar putih saja, tidak ada apa-apa                                                   | Cek terminal/Run console — biasanya ada exception merah, baca pesannya                                           |
+| Target device masih `macOS (desktop)`                                                 | Klik dropdown device di toolbar atas, ganti ke emulator Android                                                  |
 
 ---
 
@@ -922,22 +852,22 @@ Minggu depan kita mulai membangun aplikasi sungguhan. Skill yang baru saja Anda 
 
 ## Lampiran A — Cheatsheet Shortcut Android Studio
 
-| Aksi | macOS | Windows/Linux |
-|------|-------|---------------|
-| Run | `Ctrl + R` | `Shift + F10` |
-| Hot Reload | `Cmd + S` (auto saat save) | `Ctrl + S` |
-| Hot Restart | `Cmd + Shift + \` | `Ctrl + Shift + \` |
-| Stop Run | `Cmd + F2` | `Ctrl + F2` |
-| Format kode | `Cmd + Option + L` | `Ctrl + Alt + L` |
-| Cari file | `Cmd + Shift + O` | `Ctrl + Shift + N` |
-| Cari simbol/class | `Cmd + Option + O` | `Ctrl + Alt + Shift + N` |
-| Cari di semua tempat | `Shift + Shift` (double shift) | `Shift + Shift` |
-| Auto-import | `Option + Enter` | `Alt + Enter` |
-| Bungkus widget (Wrap with…) | `Option + Enter` di nama widget | `Alt + Enter` |
-| Rename simbol | `Shift + F6` | `Shift + F6` |
-| Pindah baris ke atas/bawah | `Cmd + Shift + ↑/↓` | `Ctrl + Shift + ↑/↓` |
-| Duplikasi baris | `Cmd + D` | `Ctrl + D` |
-| Komentar baris | `Cmd + /` | `Ctrl + /` |
+| Aksi                        | macOS                           | Windows/Linux            |
+| --------------------------- | ------------------------------- | ------------------------ |
+| Run                         | `Ctrl + R`                      | `Shift + F10`            |
+| Hot Reload                  | `Cmd + S` (auto saat save)      | `Ctrl + S`               |
+| Hot Restart                 | `Cmd + Shift + \`               | `Ctrl + Shift + \`       |
+| Stop Run                    | `Cmd + F2`                      | `Ctrl + F2`              |
+| Format kode                 | `Cmd + Option + L`              | `Ctrl + Alt + L`         |
+| Cari file                   | `Cmd + Shift + O`               | `Ctrl + Shift + N`       |
+| Cari simbol/class           | `Cmd + Option + O`              | `Ctrl + Alt + Shift + N` |
+| Cari di semua tempat        | `Shift + Shift` (double shift)  | `Shift + Shift`          |
+| Auto-import                 | `Option + Enter`                | `Alt + Enter`            |
+| Bungkus widget (Wrap with…) | `Option + Enter` di nama widget | `Alt + Enter`            |
+| Rename simbol               | `Shift + F6`                    | `Shift + F6`             |
+| Pindah baris ke atas/bawah  | `Cmd + Shift + ↑/↓`             | `Ctrl + Shift + ↑/↓`     |
+| Duplikasi baris             | `Cmd + D`                       | `Ctrl + D`               |
+| Komentar baris              | `Cmd + /`                       | `Ctrl + /`               |
 
 > **Pro tip:** `Option + Enter` (Mac) di nama widget → "Wrap with Center / Padding / Column / Container" — fitur paling sering dipakai saat menyusun layout.
 
@@ -954,24 +884,25 @@ Flutter's minimum supported version of Android Gradle Plugin version 8.1.1.
 
 ### B.1 Cek versi sekarang
 
-| File | Versi yang dicek | Lokasi baris |
-|------|------------------|--------------|
-| `android/gradle/wrapper/gradle-wrapper.properties` | Gradle | `distributionUrl=...gradle-X.Y-all.zip` |
-| `android/settings.gradle` | AGP | `id "com.android.application" version "X.Y.Z"` |
-| `android/build.gradle` (project lama) | AGP | `classpath 'com.android.tools.build:gradle:X.Y.Z'` |
+| File                                               | Versi yang dicek | Lokasi baris                                       |
+| -------------------------------------------------- | ---------------- | -------------------------------------------------- |
+| `android/gradle/wrapper/gradle-wrapper.properties` | Gradle           | `distributionUrl=...gradle-X.Y-all.zip`            |
+| `android/settings.gradle`                          | AGP              | `id "com.android.application" version "X.Y.Z"`     |
+| `android/build.gradle` (project lama)              | AGP              | `classpath 'com.android.tools.build:gradle:X.Y.Z'` |
 
 ### B.2 Versi yang aman dipakai (per April 2026)
 
 | Komponen | Versi Minimum | Versi Direkomendasikan |
-|----------|---------------|------------------------|
-| Gradle | 8.7 | **8.9** |
-| AGP | 8.1.1 | **8.3.0** |
-| Kotlin | 1.8.22 | **1.9.22** |
-| JDK | 17 | **17** |
+| -------- | ------------- | ---------------------- |
+| Gradle   | 8.7           | **8.9**                |
+| AGP      | 8.1.1         | **8.3.0**              |
+| Kotlin   | 1.8.22        | **1.9.22**             |
+| JDK      | 17            | **17**                 |
 
 ### B.3 Langkah perbaikan
 
 1. **Edit `android/settings.gradle`** — naikkan AGP:
+
    ```gradle
    plugins {
        id "dev.flutter.flutter-plugin-loader" version "1.0.0"
@@ -981,6 +912,7 @@ Flutter's minimum supported version of Android Gradle Plugin version 8.1.1.
    ```
 
 2. **Edit `android/gradle/wrapper/gradle-wrapper.properties`** — naikkan Gradle:
+
    ```
    distributionUrl=https\://services.gradle.org/distributions/gradle-8.9-all.zip
    ```
