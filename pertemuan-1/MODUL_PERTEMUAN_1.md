@@ -429,7 +429,9 @@ Tekan **Hot Restart** (`Cmd+Shift+\` atau `R` di terminal) — karena mengubah s
 
 ✅ Hasil: layar putih dengan tulisan "Halo, Flutter!" di tengah.
 
-![Hasil Langkah 4.1 — Halo, Flutter](images/4-1-halo-flutter.png)
+<p align="center">
+  <img src="images/4-1-halo-flutter.png" alt="Hasil Langkah 4.1 — Halo, Flutter" width="280">
+</p>
 
 ### Penjelasan Kode
 
@@ -624,7 +626,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Hasil Akhir Langkah 4 — Hello Flutter](images/4-7-hello-flutter-final.png)
+<p align="center">
+  <img src="images/4-7-hello-flutter-final.png" alt="Hasil Akhir Langkah 4 — Hello Flutter" width="280">
+</p>
 
 ### Diagram Widget Tree
 
