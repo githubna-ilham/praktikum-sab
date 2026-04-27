@@ -624,6 +624,8 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+![Hasil Akhir Langkah 4 — Hello Flutter](images/4-7-hello-flutter-final.png)
+
 ### Diagram Widget Tree
 
 ```
