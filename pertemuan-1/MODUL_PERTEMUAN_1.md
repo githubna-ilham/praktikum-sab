@@ -51,27 +51,9 @@ Pada akhir praktikum ini, mahasiswa akan memiliki **2 project**:
 1. **`pertemuan_1`** — aplikasi Hello World dengan kartu profil sederhana
 2. **`latihan_widget`** — aplikasi tempat eksperimen 4 latihan widget dasar
 
-```
-┌──────────────────────────┐
-│   ☰  Hello Flutter       │  ← AppBar
-├──────────────────────────┤
-│                           │
-│         👋               │
-│                           │
-│   Halo, [Nama Anda]!      │
-│   Selamat datang di       │
-│   dunia Flutter.          │
-│                           │
-│   ┌──────────────────┐   │
-│   │  NIM: 123456789   │   │
-│   │  Prodi: TI        │   │
-│   │  Semester: 5      │   │
-│   └──────────────────┘   │
-│                           │
-│   [ Tap Saya ]            │
-│                           │
-└──────────────────────────┘
-```
+<p align="center">
+  <img src="images/4-7-hello-flutter-final.png" alt="Gambaran Hasil Akhir — Hello Flutter" width="280">
+</p>
 
 ---
 
