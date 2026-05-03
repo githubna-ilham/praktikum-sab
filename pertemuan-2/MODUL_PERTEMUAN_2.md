@@ -2,12 +2,12 @@
 
 ## Informasi Umum
 
-| Item | Keterangan |
-|------|------------|
-| Pertemuan | Minggu 2 (Lanjutan setelah Hello World & Setup) |
-| Topik Kuliah | Anatomi halaman Flutter & katalog widget esensial |
-| Durasi Praktikum | 100 menit |
-| Prasyarat | Pertemuan 1 (Hello World & Setup Flutter) selesai |
+| Item             | Keterangan                                        |
+| ---------------- | ------------------------------------------------- |
+| Pertemuan        | Minggu 2 (Lanjutan setelah Hello World & Setup)   |
+| Topik Kuliah     | Anatomi halaman Flutter & katalog widget esensial |
+| Durasi Praktikum | 100 menit                                         |
+| Prasyarat        | Pertemuan 1 (Hello World & Setup Flutter) selesai |
 
 ---
 
@@ -22,7 +22,7 @@ Setelah menyelesaikan praktikum ini, mahasiswa mampu:
 5. Membangun **Profile Page** lengkap yang memanfaatkan semua slot `Scaffold`
 6. Punya "kamus pribadi" widget gallery untuk referensi di praktikum-praktikum berikutnya
 
-> Modul ini adalah **jembatan** antara Hello World (Praktikum 00) dan pembangunan Dashboard MyMoney (Praktikum 01). Di sini kita memperdalam komponen-komponen Flutter agar saat masuk ke aplikasi sungguhan, Anda tidak bingung memilih widget.
+> Modul ini adalah **jembatan** antara Hello World (Pertemuan 1) dan pembangunan Dashboard aplikasi sungguhan di pertemuan berikutnya. Di sini kita memperdalam komponen-komponen Flutter agar saat masuk ke aplikasi sungguhan, Anda tidak bingung memilih widget.
 
 ---
 
@@ -115,7 +115,7 @@ class ProfilePage extends StatelessWidget {
 
 Hot restart (`R`). Layar putih dengan tulisan "Profil — kosong". Kanvas siap — sekarang mari isi `Scaffold` slot demi slot.
 
-<img src="images/praktikum-00b/01-langkah1-profil-kosong.png" alt="Hasil Langkah 1 — Scaffold kosong dengan teks Profil — kosong di tengah" width="280">
+<img src="images/1-1-profil-kosong.png" alt="Hasil Langkah 1 — Scaffold kosong dengan teks Profil — kosong di tengah" width="280">
 
 ---
 
@@ -145,15 +145,15 @@ drawer = panel samping (slide dari kiri saat ☰ ditekan)
 endDrawer = panel samping kanan
 ```
 
-| Slot | Fungsi | Contoh Pakai |
-|------|--------|--------------|
-| `appBar` | Bar atas | Judul halaman, tombol back, action |
-| `body` | Isi utama | Konten halaman |
-| `floatingActionButton` | Tombol melayang | Tambah data, aksi utama |
-| `bottomNavigationBar` | Tab bar bawah | Navigasi antar halaman utama |
-| `drawer` | Panel samping kiri | Menu, profil, pengaturan |
-| `endDrawer` | Panel samping kanan | Filter, notifikasi |
-| `backgroundColor` | Warna latar | Tema halaman |
+| Slot                   | Fungsi              | Contoh Pakai                       |
+| ---------------------- | ------------------- | ---------------------------------- |
+| `appBar`               | Bar atas            | Judul halaman, tombol back, action |
+| `body`                 | Isi utama           | Konten halaman                     |
+| `floatingActionButton` | Tombol melayang     | Tambah data, aksi utama            |
+| `bottomNavigationBar`  | Tab bar bawah       | Navigasi antar halaman utama       |
+| `drawer`               | Panel samping kiri  | Menu, profil, pengaturan           |
+| `endDrawer`            | Panel samping kanan | Filter, notifikasi                 |
+| `backgroundColor`      | Warna latar         | Tema halaman                       |
 
 ### 2.2 Isi Slot Satu per Satu
 
@@ -211,12 +211,16 @@ Widget build(BuildContext context) {
 Hot restart (`R`).
 
 ✅ Sekarang Anda bisa lihat:
+
 - AppBar biru di atas dengan judul + ikon ⋮
 - Tombol ☰ di kiri AppBar — tap → drawer slide dari kiri
 - Tombol ✏ FAB di kanan bawah
 - 4 tab navigasi di paling bawah
 
+<img src="images/2-1-scaffold-lengkap.png" alt="Hasil Langkah 2 — Scaffold dengan AppBar Profil Saya, FAB edit, dan BottomNavigationBar 4 tab" width="280">
+
 🎯 **Eksperimen:**
+
 1. Ganti `Icons.more_vert` jadi `Icons.search` di action AppBar
 2. Tambahkan 1 `ListTile` lagi di drawer (misal "Tentang")
 3. Ubah `currentIndex: 1` jadi `0`, `2`, `3` — perhatikan tab mana yang ter-highlight
@@ -232,24 +236,25 @@ Sebelum mengisi `body`, pahami 4 konsep layout yang paling sering bikin pemula b
 
 ### 3.1 Padding vs Margin
 
-| Konsep | Letak | Cara di Flutter |
-|--------|-------|-----------------|
-| **Padding** | Jarak **dalam** widget (antara border ke isi) | `padding:` di `Container`, atau widget `Padding()` |
-| **Margin** | Jarak **luar** widget (antara widget ke tetangga) | `margin:` di `Container`, atau `SizedBox` di antara widget |
+| Konsep      | Letak                                             | Cara di Flutter                                            |
+| ----------- | ------------------------------------------------- | ---------------------------------------------------------- |
+| **Padding** | Jarak **dalam** widget (antara border ke isi)     | `padding:` di `Container`, atau widget `Padding()`         |
+| **Margin**  | Jarak **luar** widget (antara widget ke tetangga) | `margin:` di `Container`, atau `SizedBox` di antara widget |
 
 ```
 ┌────────────────────────────┐  ← border Container
 │ margin (luar)              │
 │  ┌──────────────────────┐  │
-│  │ padding (dalam)       │  │
-│  │  ┌────────────────┐   │  │
-│  │  │  isi widget    │   │  │
-│  │  └────────────────┘   │  │
+│  │ padding (dalam)      │  │
+│  │  ┌────────────────┐  │  │
+│  │  │  isi widget    │  │  │
+│  │  └────────────────┘  │  │
 │  └──────────────────────┘  │
 └────────────────────────────┘
 ```
 
 **Aturan praktis:**
+
 - Mau jarak antar elemen vertikal? → `SizedBox(height: X)`
 - Mau "ruang nafas" di dalam Card? → `padding: EdgeInsets.all(X)`
 - Mau menggeser widget dari tepi layar? → `padding` pada parent atau `margin` pada widget itu
@@ -270,12 +275,12 @@ Row(
 )
 ```
 
-| Widget | Kapan Pakai |
-|--------|-------------|
-| `Expanded` | Anak harus mengisi **sisa ruang** parent (Row/Column) |
-| `Flexible` | Mirip Expanded tapi child boleh **lebih kecil** dari ruang yang tersedia |
-| `SizedBox(width/height: X)` | **Jarak/spacer** dengan ukuran tetap |
-| `Container(width: X)` | Ukuran tetap **dengan dekorasi** (warna, border, dst) |
+| Widget                      | Kapan Pakai                                                              |
+| --------------------------- | ------------------------------------------------------------------------ |
+| `Expanded`                  | Anak harus mengisi **sisa ruang** parent (Row/Column)                    |
+| `Flexible`                  | Mirip Expanded tapi child boleh **lebih kecil** dari ruang yang tersedia |
+| `SizedBox(width/height: X)` | **Jarak/spacer** dengan ukuran tetap                                     |
+| `Container(width: X)`       | Ukuran tetap **dengan dekorasi** (warna, border, dst)                    |
 
 > ⚠️ **Error klasik:** `Row` + child terlalu lebar → "RIGHT OVERFLOWED BY X PIXELS". Solusi: bungkus salah satu child dengan `Expanded` atau `Flexible`.
 
@@ -305,13 +310,13 @@ ListView.builder(
 )
 ```
 
-| Pilihan | Kapan Pakai |
-|---------|-------------|
+| Pilihan                            | Kapan Pakai                                                                |
+| ---------------------------------- | -------------------------------------------------------------------------- |
 | `SingleChildScrollView` + `Column` | Halaman tidak terlalu panjang, child beragam jenis (banner, kartu, tombol) |
-| `ListView` | Daftar item homogen, jumlah sedang |
-| `ListView.builder` | Daftar dari array/database, jumlah besar (efisien) |
+| `ListView`                         | Daftar item homogen, jumlah sedang                                         |
+| `ListView.builder`                 | Daftar dari array/database, jumlah besar (efisien)                         |
 
-Di Praktikum 01 kita akan pakai `ListView` untuk daftar transaksi — jadi pastikan konsep ini paham.
+Di pertemuan berikutnya kita akan pakai `ListView` untuk daftar transaksi — jadi pastikan konsep ini paham.
 
 ### 3.4 EdgeInsets — 4 Cara Atur Padding/Margin
 
@@ -465,14 +470,17 @@ Hot restart (`R`).
 
 ✅ Hasil: Profile Page lengkap — header dengan avatar, baris statistik, 4 kartu section, semuanya bisa di-scroll. Drawer, FAB, dan BottomNav dari Langkah 2 tetap aktif.
 
+<img src="images/4-1-profile-page-lengkap.png" alt="Hasil Langkah 4 — Profile Page lengkap dengan CircleAvatar, nama, statistik Post/Teman/Like, dan kartu Tentang Saya, Pendidikan, Hobi & Minat, Kontak" width="280">
+
 🎯 **Eksperimen:**
+
 1. **Ganti data** profil dengan data Anda sebenarnya
 2. Ganti `Icons.person` di CircleAvatar dengan emoji — ganti `Icon(...)` jadi `Text('🎓', style: TextStyle(fontSize: 50))`
 3. Ubah `crossAxisAlignment: CrossAxisAlignment.stretch` di Column utama jadi `.center` — apa bedanya?
 4. Tambahkan section ke-5: "Skills" dengan icon `Icons.star`
 5. Hapus `SingleChildScrollView` (langsung pakai `Column`) — apa yang terjadi saat scroll?
 
-> 💡 Perhatikan pola **helper widget** (`_StatBox`, `_SectionCard`) — daripada copy-paste 4× kode kartu yang sama, kita bikin class kecil. Pola ini akan banyak dipakai di Praktikum 01 dan seterusnya.
+> 💡 Perhatikan pola **helper widget** (`_StatBox`, `_SectionCard`) — daripada copy-paste 4× kode kartu yang sama, kita bikin class kecil. Pola ini akan banyak dipakai di pertemuan-pertemuan berikutnya.
 
 ---
 
@@ -870,6 +878,7 @@ class _LayoutDemo extends StatelessWidget {
 Hot restart. Eksplorasi 5 kategori dengan tap-tap. Project ini sengaja Anda **simpan permanen** sebagai referensi pribadi — kalau lupa cara pakai widget X, buka kembali project ini.
 
 🎯 **Eksperimen:**
+
 - Tambah 1 widget baru di kategori favorit Anda (misal `Tooltip`, `Badge`, `LinearGradient` di Container)
 - Ubah warna kategori — buat tema sendiri
 - Coba `Stack` dengan `Positioned` di posisi berbeda
@@ -881,68 +890,74 @@ Hot restart. Eksplorasi 5 kategori dengan tap-tap. Project ini sengaja Anda **si
 Simpan tabel ini sebagai cheatsheet:
 
 ### Struktur Halaman
-| Widget | Fungsi |
-|--------|--------|
-| `Scaffold` | Kerangka halaman Material |
-| `AppBar` | Bar atas dengan title + actions |
-| `Drawer` | Panel samping (slide menu) |
-| `BottomNavigationBar` | Tab bar bawah |
-| `FloatingActionButton` | Tombol melayang |
+
+| Widget                 | Fungsi                          |
+| ---------------------- | ------------------------------- |
+| `Scaffold`             | Kerangka halaman Material       |
+| `AppBar`               | Bar atas dengan title + actions |
+| `Drawer`               | Panel samping (slide menu)      |
+| `BottomNavigationBar`  | Tab bar bawah                   |
+| `FloatingActionButton` | Tombol melayang                 |
 
 ### Layout
-| Widget | Fungsi |
-|--------|--------|
-| `Row` / `Column` | Susun horizontal / vertikal |
-| `Stack` + `Positioned` | Tumpuk widget di atas widget lain |
-| `Wrap` | Row/Column yang auto pindah baris saat penuh |
-| `Expanded` / `Flexible` | Isi sisa ruang di Row/Column |
-| `Padding` / `Container(padding:)` | Jarak dalam |
-| `SizedBox` | Spacer / jarak luar |
-| `SingleChildScrollView` | Bungkus Column agar bisa scroll |
-| `ListView` / `ListView.builder` | Daftar yang bisa scroll |
-| `GridView` | Grid 2 dimensi |
+
+| Widget                            | Fungsi                                       |
+| --------------------------------- | -------------------------------------------- |
+| `Row` / `Column`                  | Susun horizontal / vertikal                  |
+| `Stack` + `Positioned`            | Tumpuk widget di atas widget lain            |
+| `Wrap`                            | Row/Column yang auto pindah baris saat penuh |
+| `Expanded` / `Flexible`           | Isi sisa ruang di Row/Column                 |
+| `Padding` / `Container(padding:)` | Jarak dalam                                  |
+| `SizedBox`                        | Spacer / jarak luar                          |
+| `SingleChildScrollView`           | Bungkus Column agar bisa scroll              |
+| `ListView` / `ListView.builder`   | Daftar yang bisa scroll                      |
+| `GridView`                        | Grid 2 dimensi                               |
 
 ### Display
-| Widget | Fungsi |
-|--------|--------|
-| `Text` | Teks |
-| `Icon` | Ikon Material |
-| `Image` / `Image.asset` / `Image.network` | Gambar |
-| `Card` | Kartu dengan elevation |
-| `Chip` | Label kecil yang bisa dihapus |
-| `CircleAvatar` | Lingkaran (foto profil) |
-| `Divider` | Garis pemisah |
-| `ListTile` | Baris standar dengan leading-title-trailing |
+
+| Widget                                    | Fungsi                                      |
+| ----------------------------------------- | ------------------------------------------- |
+| `Text`                                    | Teks                                        |
+| `Icon`                                    | Ikon Material                               |
+| `Image` / `Image.asset` / `Image.network` | Gambar                                      |
+| `Card`                                    | Kartu dengan elevation                      |
+| `Chip`                                    | Label kecil yang bisa dihapus               |
+| `CircleAvatar`                            | Lingkaran (foto profil)                     |
+| `Divider`                                 | Garis pemisah                               |
+| `ListTile`                                | Baris standar dengan leading-title-trailing |
 
 ### Input
-| Widget | Fungsi |
-|--------|--------|
-| `TextField` / `TextFormField` | Input teks |
-| `Checkbox` / `CheckboxListTile` | Pilih banyak |
-| `Switch` / `SwitchListTile` | On/Off |
-| `Radio` | Pilih satu dari banyak |
-| `Slider` | Pilih nilai dari rentang |
-| `DropdownButton` | Pilih dari list |
-| `DatePicker` (via `showDatePicker`) | Pilih tanggal |
+
+| Widget                              | Fungsi                   |
+| ----------------------------------- | ------------------------ |
+| `TextField` / `TextFormField`       | Input teks               |
+| `Checkbox` / `CheckboxListTile`     | Pilih banyak             |
+| `Switch` / `SwitchListTile`         | On/Off                   |
+| `Radio`                             | Pilih satu dari banyak   |
+| `Slider`                            | Pilih nilai dari rentang |
+| `DropdownButton`                    | Pilih dari list          |
+| `DatePicker` (via `showDatePicker`) | Pilih tanggal            |
 
 ### Button
-| Widget | Karakter |
-|--------|----------|
-| `ElevatedButton` | Tombol primer dengan elevation |
-| `FilledButton` | Tombol primer flat (Material 3) |
-| `OutlinedButton` | Tombol sekunder berbingkai |
-| `TextButton` | Tombol tersier (link) |
-| `IconButton` | Tombol cuma ikon |
-| `FloatingActionButton` | Tombol aksi utama (FAB) |
+
+| Widget                 | Karakter                        |
+| ---------------------- | ------------------------------- |
+| `ElevatedButton`       | Tombol primer dengan elevation  |
+| `FilledButton`         | Tombol primer flat (Material 3) |
+| `OutlinedButton`       | Tombol sekunder berbingkai      |
+| `TextButton`           | Tombol tersier (link)           |
+| `IconButton`           | Tombol cuma ikon                |
+| `FloatingActionButton` | Tombol aksi utama (FAB)         |
 
 ### Feedback
-| Widget / Fungsi | Untuk Apa |
-|-----------------|-----------|
-| `SnackBar` (via `ScaffoldMessenger`) | Notifikasi pendek di bawah |
-| `AlertDialog` (via `showDialog`) | Konfirmasi/peringatan |
-| `BottomSheet` (via `showModalBottomSheet`) | Sheet dari bawah |
-| `LinearProgressIndicator` | Progress bar |
-| `CircularProgressIndicator` | Spinner |
+
+| Widget / Fungsi                            | Untuk Apa                  |
+| ------------------------------------------ | -------------------------- |
+| `SnackBar` (via `ScaffoldMessenger`)       | Notifikasi pendek di bawah |
+| `AlertDialog` (via `showDialog`)           | Konfirmasi/peringatan      |
+| `BottomSheet` (via `showModalBottomSheet`) | Sheet dari bawah           |
+| `LinearProgressIndicator`                  | Progress bar               |
+| `CircularProgressIndicator`                | Spinner                    |
 
 ---
 
@@ -972,26 +987,27 @@ Selesaikan **dalam project `profile_page`**:
 
 ## Troubleshooting Umum
 
-| Masalah | Solusi |
-|---------|--------|
-| `RenderFlex overflowed by X pixels` di Row/Column | Bungkus child dengan `Expanded` atau `Flexible` |
-| `Vertical viewport was given unbounded height` di ListView dalam Column | Beri tinggi tetap dengan `SizedBox(height: X)` atau gunakan `Expanded` |
-| Drawer tidak muncul saat ☰ ditekan | Pastikan `drawer:` ada di **`Scaffold`**, bukan di widget lain |
-| `setState() called on null` | Pastikan widget yang `setState` adalah `StatefulWidget`, bukan Stateless |
-| FAB nutupi konten terakhir di scroll | Tambah `SizedBox(height: 80)` di akhir Column |
-| Hot reload tidak refleksikan perubahan struktur class | Pakai Hot Restart (`R`) |
+| Masalah                                                                 | Solusi                                                                   |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `RenderFlex overflowed by X pixels` di Row/Column                       | Bungkus child dengan `Expanded` atau `Flexible`                          |
+| `Vertical viewport was given unbounded height` di ListView dalam Column | Beri tinggi tetap dengan `SizedBox(height: X)` atau gunakan `Expanded`   |
+| Drawer tidak muncul saat ☰ ditekan                                     | Pastikan `drawer:` ada di **`Scaffold`**, bukan di widget lain           |
+| `setState() called on null`                                             | Pastikan widget yang `setState` adalah `StatefulWidget`, bukan Stateless |
+| FAB nutupi konten terakhir di scroll                                    | Tambah `SizedBox(height: 80)` di akhir Column                            |
+| Hot reload tidak refleksikan perubahan struktur class                   | Pakai Hot Restart (`R`)                                                  |
 
 ---
 
-## Preview Praktikum 01
+## Preview Pertemuan Berikutnya
 
 Sekarang Anda sudah punya:
-- ✅ Pemahaman anatomi `Scaffold` lengkap → akan dipakai di semua halaman MyMoney
-- ✅ `ListView` & `Card` → akan dipakai untuk daftar transaksi di Dashboard
-- ✅ `BottomNavigationBar` → akan dipakai sebagai navigasi utama MyMoney
-- ✅ `FloatingActionButton` → akan dipakai untuk tombol "Tambah Transaksi"
+
+- ✅ Pemahaman anatomi `Scaffold` lengkap → akan dipakai di semua halaman aplikasi
+- ✅ `ListView` & `Card` → akan dipakai untuk daftar item di halaman Dashboard
+- ✅ `BottomNavigationBar` → akan dipakai sebagai navigasi utama aplikasi
+- ✅ `FloatingActionButton` → akan dipakai untuk tombol aksi utama
 - ✅ Cheatsheet widget → referensi pribadi sepanjang sisa praktikum
 
-Praktikum 01 akan **menerapkan langsung** semua ini ke aplikasi sungguhan: **MyMoney Dashboard** dengan Balance Card, daftar transaksi, BottomNav, dan FAB.
+Pertemuan berikutnya akan **menerapkan langsung** semua ini ke aplikasi sungguhan: **Dashboard** dengan kartu ringkasan, daftar item, BottomNav, dan FAB.
 
 > Simpan project `profile_page` dan `widget_gallery`. Kapanpun Anda lupa pola widget, buka project ini — itulah cara terbaik mengingat: kode yang **Anda tulis sendiri**.
