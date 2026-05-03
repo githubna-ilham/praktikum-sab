@@ -510,6 +510,8 @@ ListTile(
 
 Letakkan setelah `ListTile` "Pengaturan" yang sudah ada di Langkah 2.
 
+<img src="images/5-1-drawer-widget-gallery.png" alt="Hasil Langkah 5.1 — Drawer terbuka menampilkan menu Beranda, Profil, Pengaturan, dan Widget Gallery dengan ikon kotak" width="280">
+
 ### 5.2 Tambahkan Class GalleryHome
 
 Masih di file `lib/main.dart` yang sama, **tambahkan class baru di bawah** class `_SectionCard` (helper widget terakhir dari Langkah 4):
@@ -575,6 +577,8 @@ class CategoryPage extends StatelessWidget {
 ```
 
 Hot restart (`R`). Buka drawer di Profile Page → tap **"Widget Gallery"** → masuk ke daftar 5 kategori. Tap salah satu kategori → halaman placeholder.
+
+<img src="images/5-2-gallery-home.png" alt="Hasil Langkah 5.2 — Halaman Widget Gallery dengan 5 kartu kategori: Display, Input, Button, Feedback, Layout, masing-masing dengan ikon berwarna" width="280">
 
 > 💡 Baris `Navigator.push(...)` adalah **pengenalan navigasi**. Kita akan dalami di pertemuan berikutnya. Untuk sekarang, cukup paham: ini cara berpindah halaman.
 
