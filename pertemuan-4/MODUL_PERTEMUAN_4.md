@@ -717,32 +717,6 @@ Jalankan `flutter run` di emulator, lalu cek:
 
 ---
 
-## Pertanyaan Refleksi
-
-1. Mengapa `main()` harus memanggil `WidgetsFlutterBinding.ensureInitialized()` saat kita pakai `sqflite`?
-2. Apa beda antara `async` di tanda tangan fungsi dan `await` di dalam body? Bisakah ada `await` tanpa `async`?
-3. Sebutkan **3 state** yang ditangani `FutureBuilder` dan bagaimana cara mengeceknya dari `snapshot`.
-4. Kenapa di `_HomePageState` kita menyimpan `Future` di field, bukan menulis `future: DbHelper.instance.getAll()` langsung di builder?
-5. Mengapa skema tabel menyimpan `dibuat_pada` sebagai `INTEGER` alih-alih `TEXT`?
-6. Jelaskan bahaya menulis `where: "id = ${c.id}"` dibanding `where: 'id = ?', whereArgs: [c.id]`.
-7. Kapan callback `onCreate` di `openDatabase` dipanggil? Apa yang harus diubah kalau Anda menambah kolom baru di tabel?
-8. Apa peran method `copyWith` di model `Catatan` saat mode Edit?
-
----
-
-## Tugas Mandiri
-
-Pilih **salah satu** untuk dikerjakan dan dikumpulkan:
-
-1. **Search & Filter** — tambahkan `TextField` pencarian di AppBar Home. Filter dilakukan di SQL (`WHERE judul LIKE ? OR isi LIKE ?`), bukan di Dart. Juga tambahkan dropdown filter kategori.
-2. **Sort selectable** — tambahkan menu sort di AppBar: "Terbaru", "Terlama", "Judul A-Z". Diterapkan via parameter `orderBy` di `DbHelper.getAll()`.
-3. **Migrasi skema (versi 2)** — tambahkan kolom baru `is_pinned INTEGER DEFAULT 0`, naikkan `_dbVersion` ke 2, tulis `onUpgrade` yang menjalankan `ALTER TABLE ... ADD COLUMN ...`. Tampilkan icon pin di item & sort pinned-first.
-4. **Ekspor & impor JSON** — tombol "Export" yang menulis seluruh catatan sebagai file `.json` di storage app (`path_provider`), dan tombol "Import" yang membacanya kembali dan meng-insert ke DB.
-
-Kumpulkan: link repo Git berisi project `pertemuan_4` + screenshot hasil + jawaban Pertanyaan Refleksi.
-
----
-
 ## Referensi
 
 - [Flutter Docs — Asynchronous programming: futures, async, await](https://dart.dev/codelabs/async-await)
