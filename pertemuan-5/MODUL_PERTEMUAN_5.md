@@ -44,7 +44,7 @@ Setelah menyelesaikan praktikum ini, mahasiswa mampu:
 
 ## Kontrak API (yang sudah disiapkan dosen)
 
-Base URL contoh: `https://pertemuan-5-be.up.railway.app/api`
+Base URL: `https://besab-production.up.railway.app/api`
 Semua request wajib header `X-API-Key: <key dari dosen>`.
 
 | Method | URL                  | Body                                          | Sukses                   | Error              |
@@ -261,7 +261,7 @@ class ApiClient {
   static final ApiClient instance = ApiClient._();
 
   // === GANTI DUA KONSTANTA INI SESUAI DOSEN ===
-  static const String _baseUrl = 'https://pertemuan-5-be.up.railway.app/api';
+  static const String _baseUrl = 'https://besab-production.up.railway.app/api';
   static const String _apiKey  = '8f38b5fbf0bc437285f2c62ed6e447eab56f78c8f95239a7';
   // ============================================
 
