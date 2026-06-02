@@ -45,7 +45,8 @@ Setelah menyelesaikan praktikum ini, mahasiswa mampu:
 ## Kontrak API (yang sudah disiapkan dosen)
 
 Base URL: `https://besab-production.up.railway.app/api`
-Semua request wajib header `X-API-Key: <key dari dosen>`.
+API key: `8f38b5fbf0bc437285f2c62ed6e447eab56f78c8f95239a7`
+Semua request wajib header `X-API-Key: <api key di atas>`.
 
 | Method | URL                  | Body                                          | Sukses                   | Error              |
 |--------|----------------------|-----------------------------------------------|--------------------------|--------------------|
@@ -121,9 +122,9 @@ flutter pub get
 
 P5 tidak butuh `DbHelper` lagi. Hapus file, lalu hapus import-nya di `lib/main.dart`.
 
-### 1.4 Tambah base URL dari dosen
+### 1.4 Base URL & API key
 
-Catat base URL & API key dari papan tulis / LMS. Kita akan pakai di Langkah 4.
+Base URL & API key sudah ditentukan (lihat tabel kontrak API di atas). Kita akan pakai di Langkah 4.
 
 ### 1.5 Catatan emulator
 
@@ -260,10 +261,10 @@ class ApiClient {
   ApiClient._();
   static final ApiClient instance = ApiClient._();
 
-  // === GANTI DUA KONSTANTA INI SESUAI DOSEN ===
+  // === Base URL & API key (lihat kontrak API di Langkah 0) ===
   static const String _baseUrl = 'https://besab-production.up.railway.app/api';
   static const String _apiKey  = '8f38b5fbf0bc437285f2c62ed6e447eab56f78c8f95239a7';
-  // ============================================
+  // ==========================================================
 
   static const _timeout = Duration(seconds: 10);
 
