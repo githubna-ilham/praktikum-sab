@@ -89,14 +89,30 @@ flowchart LR
 
 ## Langkah 1 — Setup Project (10 menit)
 
-### 1.1 Copy dari Pertemuan 4
+### 1.1 Clone repo materi & duplikasi dari Pertemuan 4
+
+Kalau belum pernah clone repo materi praktikum:
 
 ```bash
-cp -r pertemuan_4 pertemuan_5
-cd pertemuan_5
+git clone https://github.com/githubna-ilham/praktikum-sab.git
+cd praktikum-sab
 ```
 
-Atau buat fresh: `flutter create pertemuan_5` lalu salin `lib/main.dart` dari P4.
+Lalu duplikasi Pertemuan 4 sebagai titik awal:
+
+```bash
+cp -r pertemuan-4 pertemuan-5
+cd pertemuan-5
+```
+
+Generate folder native (sekali saja) & install paket:
+
+```bash
+flutter create .
+flutter pub get
+```
+
+> 💡 Kita **refactor bertahap** dari kode P4 (SQLite) menjadi P5 (REST API), bukan mulai dari nol.
 
 ### 1.2 Ganti dependensi di `pubspec.yaml`
 
