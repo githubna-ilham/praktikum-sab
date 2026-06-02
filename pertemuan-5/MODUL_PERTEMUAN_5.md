@@ -262,7 +262,7 @@ class ApiClient {
 
   // === GANTI DUA KONSTANTA INI SESUAI DOSEN ===
   static const String _baseUrl = 'https://pertemuan-5-be.up.railway.app/api';
-  static const String _apiKey  = 'dev-secret-123';
+  static const String _apiKey  = '8f38b5fbf0bc437285f2c62ed6e447eab56f78c8f95239a7';
   // ============================================
 
   static const _timeout = Duration(seconds: 10);
