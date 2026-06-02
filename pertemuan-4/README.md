@@ -15,8 +15,9 @@ Mengangkat konsep inti:
 ## Cara menjalankan
 
 ```bash
-cd pertemuan_4
-flutter create .          # generate folder native (android/ios/...) jika belum ada
+git clone https://github.com/githubna-ilham/praktikum-sab.git
+cd praktikum-sab/pertemuan-4
+flutter create .          # generate folder native (android/ios/...) — wajib pertama kali
 flutter pub get
 flutter run
 ```
@@ -27,5 +28,4 @@ flutter run
 
 ## Modul
 
-Lihat penjelasan lengkap & langkah praktikum di
-`../materi-pengajaran/pertemuan-4/MODUL_PERTEMUAN_4.md`.
+Lihat penjelasan lengkap & langkah praktikum di [`MODUL_PERTEMUAN_4.md`](./MODUL_PERTEMUAN_4.md) di folder yang sama.
